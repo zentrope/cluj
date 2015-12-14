@@ -13,3 +13,4 @@ pom.xml.asc
 /resources
 /dev-resources
 *.html
+/.DS_Store
