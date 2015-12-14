@@ -9,7 +9,7 @@ for shell-scripting, or whatever.
 * Status
 
 Not finished at all. Well, you can generate the uberjar, but the
-"cluj" script it's something you can download and have it install the
+"cluj" script isn't something you can download and have it install the
 components needed.
 
 * Bundled Libs
