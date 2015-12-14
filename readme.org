@@ -19,7 +19,7 @@ is the Clojure REPL.
 
  - [[http://clojure.org][clojure]] :: The language
  - [[https://github.com/clojure/core.async][core.async]] :: Async-style concurrency
- - [[https://github.com/clj-time/clj-time][clj.time]] :: Fancy date/time maniulation.
+ - [[https://github.com/clj-time/clj-time][clj.time]] :: A date and time library for Clojure, wrapping the Joda Time library.
  - [[http://www.http-kit.org][http-kit]] :: (has both server and client)
  - [[https://github.com/clojure/tools.cli][tools.cli]] :: Command line options.
  - [[https://github.com/Raynes/fs/][fs]] :: This library defines some utilities for working with the file
