@@ -7,7 +7,7 @@
 
 (def deps
   '[[org.clojure/clojure "1.8.0-RC3"]
-    [me.raynes/fs "1.4.6" :excluse [org.clojure/clojure]]
+    [me.raynes/fs "1.4.6"]
     [http-kit "2.1.19"]])
 
 (def repos

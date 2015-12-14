@@ -1,4 +1,4 @@
-#+title: Cluj
+#+title: cluj
 #+author: Keith Irwin
 #+startup: showall
 
@@ -6,13 +6,13 @@ Clojure bundled with a lot of handy "shell scripting" libs. Put the
 uberjar on your classpath and you can have lots of handy functionality
 for shell-scripting, or whatever.
 
-* Status
+* status
 
 Not finished at all. Well, you can generate the uberjar, but the
 "cluj" script isn't something you can download and have it install the
 components needed.
 
-* Bundled Libs
+* bundled libs
 
 All of these are mashed together into an uberjar, the "main" of which
 is the Clojure REPL.
@@ -31,7 +31,7 @@ is the Clojure REPL.
  - [[https://github.com/cemerick/pomegranate][pomegranate]] :: Support for resolving Java/Clojure dependencies same
                   as Leiningen.
 
-* Example Script
+* example script
 
 Imagine you want to use shell script to build your Clojure app rather
 than a full blown system. The hardest part of that system is resolving
@@ -48,7 +48,7 @@ resolver:
 
   (def deps
     '[[org.clojure/clojure "1.8.0-RC3"]
-      [me.raynes/fs "1.4.6" :excluse [org.clojure/clojure]]
+      [me.raynes/fs "1.4.6"]
       [http-kit "2.1.19"]])
 
   (def repos
@@ -75,4 +75,26 @@ resolver:
   ;; Dump the classpath
   (println "classpath:")
   (println (class-path deps repos))
+#+end_src
+
+If the =cluj= script is on your path, for instance, in =~/bin=, you
+can run this script as:
+
+#+begin_src sh
+  cluj deps.clj
+#+end_src
+
+Given that the first line is =!/usr/bin/env cluj= you can set the
+execute permission on the script and run it directly:
+
+#+begin_src sh
+  chmod u+x deps.clj
+  ./deps.clj
+#+end_src
+
+again, as long as =cluj= is on your classpath. With a few changes
+(removing the "jar =>" print stuff), you could do something like:
+
+#+begin_src sh
+  export CLASSPATH=`deps.clj`
 #+end_src
