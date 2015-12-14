@@ -19,6 +19,7 @@ is the Clojure REPL.
 
  - [[http://clojure.org][clojure]] :: The language
  - [[https://github.com/clojure/core.async][core.async]] :: Async-style concurrency
+ - [[https://github.com/clj-time/clj-time][clj.time]] :: Fancy date/time maniulation.
  - [[http://www.http-kit.org][http-kit]] :: (has both server and client)
  - [[https://github.com/clojure/tools.cli][tools.cli]] :: Command line options.
  - [[https://github.com/Raynes/fs/][fs]] :: This library defines some utilities for working with the file
@@ -30,6 +31,13 @@ is the Clojure REPL.
               Checksum, HMAC and Signature library for Clojure.
  - [[https://github.com/cemerick/pomegranate][pomegranate]] :: Support for resolving Java/Clojure dependencies same
                   as Leiningen.
+
+* maybe add?
+
+ - jdbc api?
+ - postgres and mysql drivers?
+ - datomic free?
+ - core.match?
 
 * example script
 
