@@ -41,10 +41,8 @@ resolver:
 #+begin_src clojure
   #!/usr/bin/env cluj
 
-  (require '[cluj.core :as cluj])
   (require '[clojure.string :as s])
   (require '[cemerick.pomegranate.aether :as a])
-  (require '[clojure.pprint :refer (pprint)])
 
   (def deps
     '[[org.clojure/clojure "1.8.0-RC3"]
