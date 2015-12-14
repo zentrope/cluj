@@ -1,0 +1,78 @@
+#+title: Cluj
+#+author: Keith Irwin
+#+startup: showall
+
+Clojure bundled with a lot of handy "shell scripting" libs. Put the
+uberjar on your classpath and you can have lots of handy functionality
+for shell-scripting, or whatever.
+
+* Status
+
+Not finished at all. Well, you can generate the uberjar, but the
+"cluj" script it's something you can download and have it install the
+components needed.
+
+* Bundled Libs
+
+All of these are mashed together into an uberjar, the "main" of which
+is the Clojure REPL.
+
+ - [[http://clojure.org][clojure]] :: The language
+ - [[https://github.com/clojure/core.async][core.async]] :: Async-style concurrency
+ - [[http://www.http-kit.org][http-kit]] :: (has both server and client)
+ - [[https://github.com/clojure/tools.cli][tools.cli]] :: Command line options.
+ - [[https://github.com/Raynes/fs/][fs]] :: This library defines some utilities for working with the file
+         system in Clojure. Mostly, it wants to fill the gap that
+         =clojure.java.io= leaves and add on (and prettify) what
+         =java.io.File= provides.
+ - [[https://github.com/clojure/data.json][data.json]] :: JSON parser/generator to/from Clojure data structures.
+ - [[https://github.com/xsc/pandect][pandect]] :: Pandect is a fast and easy-to-use Message Digest,
+              Checksum, HMAC and Signature library for Clojure.
+ - [[https://github.com/cemerick/pomegranate][pomegranate]] :: Support for resolving Java/Clojure dependencies same
+                  as Leiningen.
+
+* Example Script
+
+Imagine you want to use shell script to build your Clojure app rather
+than a full blown system. The hardest part of that system is resolving
+dependencies. =Cluj= includes =pomegranate=, so you can role your own
+resolver:
+
+#+begin_src clojure
+  #!/usr/bin/env cluj
+
+  (require '[cluj.core :as cluj])
+  (require '[clojure.string :as s])
+  (require '[cemerick.pomegranate.aether :as a])
+  (require '[clojure.pprint :refer (pprint)])
+
+  (def deps
+    '[[org.clojure/clojure "1.8.0-RC3"]
+      [me.raynes/fs "1.4.6" :excluse [org.clojure/clojure]]
+      [http-kit "2.1.19"]])
+
+  (def repos
+    {"central" {:url "http://repo1.maven.org/maven2/"}
+     "sonatype" {:url "http://oss.sonatype.org/content/repositories/releases"}
+     "java.net" {:url "http://download.java.net/maven/2"}
+     "clojars" {:url "http://clojars.org/repo"}})
+
+  (defn jar-list
+    [deps repos]
+    (-> (a/resolve-dependencies :coordinates deps :repositories repos)
+        (a/dependency-files)))
+
+  (defn class-path
+    [deps repos]
+    (->> (jar-list deps repos)
+         (map #(.getAbsolutePath %))
+         (s/join (System/getProperty "path.separator"))))
+
+  ;; Print path to each jar
+  (doseq [jar (sort (jar-list deps repos))]
+    (println "jar =>" (.getAbsolutePath jar)))
+
+  ;; Dump the classpath
+  (println "classpath:")
+  (println (class-path deps repos))
+#+end_src

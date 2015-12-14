@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+version="cluj-0.1.0-standalone"
+repo="${HOME}/Desktop"
+
+cluj_jar=$(find ${repo} -iname ${version}.jar)
+
+if [[ "" = "$@" ]] ; then
+  rlwrap java -cp ${cluj_jar} clojure.main "$@"
+else
+  java -cp ${cluj_jar} clojure.main "$@"
+fi
