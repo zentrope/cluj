@@ -1,12 +1,27 @@
 #!/usr/bin/env bash
 
-version="cluj-0.1.0-standalone"
-repo="${HOME}/Desktop"
+root=$(cd $(dirname $0) > /dev/null ; pwd)
+bash=`which bash`
+rlwrap=`which rlwrap`
 
-cluj_jar=$(find ${repo} -iname ${version}.jar)
+version="cluj-0.2.0-standalone.jar"
+local="${root}/${version}"
+system="${HOME}/.cluj/${version}"
+
+if [ -e "${local}" ]; then
+  clujar="${local}"
+else
+  clujar="${system}"
+fi
+
+
+if [ ! -e ${clujar} ]; then
+  echo "cluj not found: expected in [${local}] or [${system}]"
+  exit 1
+fi
 
 if [[ "" = "$@" ]] ; then
-  rlwrap java -cp ${cluj_jar} clojure.main "$@"
+  ${rlwrap} java -cp ${clujar} clojure.main "$@"
 else
-  java -cp ${cluj_jar} clojure.main "$@"
+  java -cp ${clujar} clojure.main "$@"
 fi
