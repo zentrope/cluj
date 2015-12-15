@@ -1,0 +1,9 @@
+#+title: change log
+#+author: Keith Irwin
+
+* Version 0.2.0
+  - Added datomic-free
+  - Added nrepl
+
+* Version 0.1.0
+  - initial version

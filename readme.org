@@ -20,17 +20,22 @@ is the Clojure REPL.
  - [[http://clojure.org][clojure]] :: The language
  - [[https://github.com/clojure/core.async][core.async]] :: Async-style concurrency
  - [[https://github.com/clj-time/clj-time][clj.time]] :: A date and time library for Clojure, wrapping the Joda Time library.
+ - [[https://github.com/clojure/data.json][data.json]] :: JSON parser/generator to/from Clojure data structures.
+ - [[http://datomic.com][datomic-free]] :: The fully transactional, cloud-ready, distributed database.
  - [[http://www.http-kit.org][http-kit]] :: (has both server and client)
- - [[https://github.com/clojure/tools.cli][tools.cli]] :: Command line options.
  - [[https://github.com/Raynes/fs/][fs]] :: This library defines some utilities for working with the file
          system in Clojure. Mostly, it wants to fill the gap that
          =clojure.java.io= leaves and add on (and prettify) what
          =java.io.File= provides.
- - [[https://github.com/clojure/data.json][data.json]] :: JSON parser/generator to/from Clojure data structures.
  - [[https://github.com/xsc/pandect][pandect]] :: Pandect is a fast and easy-to-use Message Digest,
               Checksum, HMAC and Signature library for Clojure.
  - [[https://github.com/cemerick/pomegranate][pomegranate]] :: Support for resolving Java/Clojure dependencies same
                   as Leiningen.
+ - [[https://github.com/clojure/tools.cli][tools.cli]] :: Command line options.
+ - [[https://github.com/clojure/tools.nrepl][tools.nrepl]] :: A Clojure network REPL that provides a server and
+                  client, along with some common APIs of use to IDEs
+                  and other tools that may need to evaluate Clojure
+                  code in remote environments.
 
 * maybe add?
 
