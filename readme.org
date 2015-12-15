@@ -36,13 +36,14 @@ is the Clojure REPL.
                   client, along with some common APIs of use to IDEs
                   and other tools that may need to evaluate Clojure
                   code in remote environments.
+ - [[https://github.com/clojure-emacs/cider-nrepl][cider-nrepl]] :: nREPL middleware for CIDER
 
 * maybe add?
 
  - jdbc api?
  - postgres and mysql drivers?
- - datomic free?
- - core.match?
+ - +datomic free (to use for experiments or quick hacks)+?
+ - core.logic?
 
 * example script
 
