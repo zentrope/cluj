@@ -5,6 +5,7 @@
   - Added datomic-free
   - Added nrepl + cider
   - Added a simple repl server example
+  - Added a datomic work session
 
 * Version 0.1.0
   - initial version
