@@ -51,17 +51,17 @@ is the Clojure REPL.
 
 * maybe add?
 
- - jdbc api?
- - postgres and mysql drivers?
- - +datomic free (to use for experiments or quick hacks)+?
  - core.logic?
+ - jdbc api?
+ - postgres, mysql, [[http://h2database.com/html/cheatSheet.html][h2]] and [[https://github.com/xerial/sqlite-jdbc][sql-lite]] drivers?
+ - +datomic free (to use for experiments or quick hacks)+?
 
 * example script
 
-Imagine you want to use shell script to build your Clojure app rather
-than a full blown system. The hardest part of that system is resolving
-dependencies. =Cluj= includes =pomegranate=, so you can role your own
-resolver:
+Imagine you want to use a shell script to build your Clojure app
+rather than a full blown system. The hardest part of that system is
+resolving dependencies. =Cluj= includes =pomegranate=, so you can role
+your own resolver:
 
 #+begin_src clojure
   #!/usr/bin/env cluj
