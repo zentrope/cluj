@@ -19,6 +19,7 @@
    [pandect "0.5.4"]
    [org.codehaus.plexus/plexus-utils "3.0.22"]
    [org.clojure/tools.nrepl "0.2.12"]
+   [cider/cider-nrepl "0.10.0"]
    [com.datomic/datomic-free "0.9.5344" :exclusions [org.slf4j/jcl-over-slf4j
                                                      org.slf4j/jul-to-slf4j
                                                      org.slf4j/log4j-over-slf4j
