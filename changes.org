@@ -3,7 +3,8 @@
 
 * Version 0.2.0
   - Added datomic-free
-  - Added nrepl
+  - Added nrepl + cider
+  - Added a simple repl server example
 
 * Version 0.1.0
   - initial version
