@@ -89,7 +89,7 @@ resolver:
   (println (class-path deps repos))
 #+end_src
 
-If the =cluj= script is on your path, for instance, in =~/bin=, you
+If the =cluj= script is on your =$PATH=, for instance, in =~/bin=, you
 can run this script as:
 
 #+begin_src sh
@@ -104,7 +104,7 @@ execute permission on the script and run it directly:
   ./deps.clj
 #+end_src
 
-again, as long as =cluj= is on your classpath. With a few changes
+again, as long as =cluj= is on your =$PATH=. With a few changes
 (removing the "jar =>" print stuff), you could do something like:
 
 #+begin_src sh
