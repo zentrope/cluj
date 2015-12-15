@@ -4,7 +4,7 @@ root=$(cd $(dirname $0) > /dev/null ; pwd)
 bash=`which bash`
 rlwrap=`which rlwrap`
 
-version="cluj-0.2.0-standalone.jar"
+version="cluj-0.2.0-SNAPSHOT-standalone.jar"
 local="${root}/${version}"
 system="${HOME}/.cluj/${version}"
 
@@ -14,13 +14,13 @@ else
   clujar="${system}"
 fi
 
-
 if [ ! -e ${clujar} ]; then
   echo "cluj not found: expected in [${local}] or [${system}]"
   exit 1
 fi
 
 if [[ "" = "$@" ]] ; then
+  echo "Cluj 0.2.0-SNAPSHOT"
   ${rlwrap} java -cp ${clujar} clojure.main "$@"
 else
   java -cp ${clujar} clojure.main "$@"
