@@ -8,9 +8,20 @@ for shell-scripting, or whatever.
 
 * status
 
-Not finished at all. Well, you can generate the uberjar, but the
-"cluj" script isn't something you can download and have it install the
-components needed.
+[[https://github.com/zentrope/cluj/releases/tag/v0.2.0][Version 0.2.0]].
+
+You can get the release on the [[https://github.com/zentrope/cluj/releases][releases]] page.
+
+- Download the jar
+
+- Download the script
+
+- Put both the jar and the script on your =$PATH= and =chmod u+x
+  cluj= the script. It expects the jar in the same directory as the
+  script itself, or in =~/.cluj=.
+
+Someday, the =cluj= script should self-install, and the jar itself
+should contain some code to update itself, but that day isn't today.
 
 * bundled libs
 
