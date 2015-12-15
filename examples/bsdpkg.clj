@@ -33,30 +33,34 @@
    :files {}
    :scripts {}})
 
-(defn size-of
+(defn find-files
   [dir]
   (->> (fs/find-files* dir fs/file?)
-       (reduce (fn [count file] (+ count (.length file))) 0)))
+       (map #(assoc {} :file % :size (.length %) :sha256 (sha256-file %)))))
 
-(defn plist
-  [dir]
-  (->> (fs/find-files* dir fs/file?)
-       (map #(assoc {} :file %))
-       (map #(assoc % :sha256 (sha256-file (:file %))))
-       (reduce (fn [a v]
-                 (assoc a (.getAbsolutePath (:file v)) (str "1$" (:sha256 v)))) {})))
+(defn size-of
+  [files]
+  (apply + (map :size files)))
+
+(defn plist-of
+  [files]
+  (reduce #(assoc %1 (.getAbsolutePath (:file %2)) (str "1$" (:sha256 %2))) {} files))
 
 (defn validate!
   [dir]
   (when (nil? dir)
     (halt! 1 "Must supply directory as first argument"))
-
   (when-not (fs/directory? dir)
     (halt! 2 (str "The file " dir " ought to be a directory."))))
 
-(let [dir (first *command-line-args*)]
+(defn main
+  [[dir & args]]
   (validate! dir)
-  (let [manifest (-> the-pkg
-                     (assoc :files (plist dir))
-                     (assoc :flatsize (size-of dir)))]
-    (println (json/write-str manifest))))
+  (let [files (find-files dir)]
+    (-> the-pkg
+        (assoc :files (plist-of files))
+        (assoc :flatsize (size-of files))
+        json/write-str
+        println)))
+
+(main *command-line-args*)
