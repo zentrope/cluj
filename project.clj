@@ -1,4 +1,4 @@
-(defproject zentrope.com/cluj "0.2.0"
+(defproject zentrope.com/cluj "0.3.0"
   :description
   "bundle clojure libs to use for shell scripting"
 
@@ -12,7 +12,7 @@
    [com.cemerick/pomegranate "0.3.0" :exclusions [org.codehaus.plexus/plexus-utils]]
    [http-kit "2.1.21-alpha2"]
    [me.raynes/fs "1.4.6"]
-   [org.clojure/clojure "1.8.0-RC3"]
+   [org.clojure/clojure "1.8.0-RC4"]
    [org.clojure/core.async "0.2.374"]
    [org.clojure/data.json "0.2.6"]
    [org.clojure/tools.cli "0.3.3"]

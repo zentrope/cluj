@@ -1,6 +1,9 @@
 #+title: change log
 #+author: Keith Irwin
 
+* Version 0.3.0
+  - Updated to Clojure 1.8-RC4
+
 * Version 0.2.0
   - Added datomic-free
   - Added nrepl + cider
