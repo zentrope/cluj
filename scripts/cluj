@@ -4,7 +4,9 @@ root=$(cd $(dirname $0) > /dev/null ; pwd)
 bash=`which bash`
 rlwrap=`which rlwrap`
 
-version="cluj-0.3.0-standalone.jar"
+vers="0.3.0"
+
+version="cluj-${vers}-standalone.jar"
 local="${root}/${version}"
 system="${HOME}/.cluj/${version}"
 
@@ -20,7 +22,7 @@ if [ ! -e ${clujar} ]; then
 fi
 
 if [[ "" = "$@" ]] ; then
-  echo "Cluj 0.2.0"
+  echo "Cluj ${vers}"
   ${rlwrap} java -cp ${clujar} clojure.main "$@"
 else
   java -cp ${clujar} clojure.main "$@"
