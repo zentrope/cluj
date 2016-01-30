@@ -14,13 +14,14 @@
    [org.clojure/tools.cli "0.3.3"]
    [org.clojure/tools.nrepl "0.2.12"]
 
+   [org.clojure/core.logic "0.8.10"]
    [clj-time "0.11.0"]
    [com.cemerick/pomegranate "0.3.0" :exclusions [org.codehaus.plexus/plexus-utils]]
    [http-kit "2.1.21-alpha2"]
    [me.raynes/fs "1.4.6"]
    [pandect "0.5.4"]
    [org.codehaus.plexus/plexus-utils "3.0.22"]
-   [cider/cider-nrepl "0.10.1"]
+   [cider/cider-nrepl "0.10.2"]
    [com.stuartsierra/component "0.3.1"]
    [com.datomic/datomic-free "0.9.5344" :exclusions [org.slf4j/jcl-over-slf4j
                                                      org.slf4j/jul-to-slf4j

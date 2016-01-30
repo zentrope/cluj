@@ -8,7 +8,7 @@ for shell-scripting, or whatever.
 
 * status
 
-[[https://github.com/zentrope/cluj/releases/tag/v0.3.0][Version 0.3.0].
+[[https://github.com/zentrope/cluj/releases/tag/v0.4.0][Version 0.4.0]].
 
 You can get the release on the [[https://github.com/zentrope/cluj/releases][releases]] page.
 
@@ -49,13 +49,15 @@ is the Clojure REPL.
                   code in remote environments.
  - [[https://github.com/clojure-emacs/cider-nrepl][cider-nrepl]] :: nREPL middleware for CIDER
 
+ - [[https://github.com/clojure/core.logic][core.logic]] :: Facilities for logic programming.
+
 * For 4.0
 
 - [[https://github.com/stuartsierra/component][component]] :: Stuart Sierra's component library
 
 * maybe add?
 
- - core.logic?
+ - +core.logic?+
  - jdbc api?
  - postgres, mysql, [[http://h2database.com/html/cheatSheet.html][h2]] and [[https://github.com/xerial/sqlite-jdbc][sql-lite]] drivers?
  - +datomic free (to use for experiments or quick hacks)+?
@@ -74,7 +76,7 @@ your own resolver:
   (require '[cemerick.pomegranate.aether :as a])
 
   (def deps
-    '[[org.clojure/clojure "1.8.0-RC3"]
+    '[[org.clojure/clojure "1.8.0"]
       [me.raynes/fs "1.4.6"]
       [http-kit "2.1.19"]])
 
