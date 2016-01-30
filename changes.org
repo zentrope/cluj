@@ -1,6 +1,11 @@
 #+title: change log
 #+author: Keith Irwin
 
+* Version 0.4.0
+  - Updated to Clojure 1.8
+  - Added core.logic.
+  - Added Stuart Sierra's component library.
+
 * Version 0.3.0
   - Updated to Clojure 1.8-RC4
 
