@@ -51,16 +51,20 @@ is the Clojure REPL.
 
  - [[https://github.com/clojure/core.logic][core.logic]] :: Facilities for logic programming.
 
-* For 4.0
+ - [[https://github.com/stuartsierra/component][component]] :: Stuart Sierra's component library [4.0]
 
-- [[https://github.com/stuartsierra/component][component]] :: Stuart Sierra's component library
+ - jsch :: A java lib for SSH related stuff. [4.1]
+
+ - javamail :: Java lib for sending email. [4.1]
+
+ - hiccup :: Lib for creating XML/HTML via clojure data structures. [4.1]
 
 * maybe add?
 
  - +core.logic?+
+ - +datomic free (to use for experiments or quick hacks)+?
  - jdbc api?
  - postgres, mysql, [[http://h2database.com/html/cheatSheet.html][h2]] and [[https://github.com/xerial/sqlite-jdbc][sql-lite]] drivers?
- - +datomic free (to use for experiments or quick hacks)+?
 
 * example script
 

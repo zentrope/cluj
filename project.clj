@@ -1,4 +1,4 @@
-(defproject zentrope.com/cluj "0.4.0"
+(defproject zentrope.com/cluj "0.4.1"
   :description
   "bundle clojure libs to use for shell scripting"
 
@@ -17,13 +17,16 @@
    [org.clojure/core.logic "0.8.10"]
    [clj-time "0.11.0"]
    [com.cemerick/pomegranate "0.3.0" :exclusions [org.codehaus.plexus/plexus-utils]]
-   [http-kit "2.1.21-alpha2"]
+   [http-kit "2.2.0-alpha1"]
    [me.raynes/fs "1.4.6"]
    [pandect "0.5.4"]
    [org.codehaus.plexus/plexus-utils "3.0.22"]
-   [cider/cider-nrepl "0.10.2"]
+   [cider/cider-nrepl "0.11.0"]
    [com.stuartsierra/component "0.3.1"]
-   [com.datomic/datomic-free "0.9.5344" :exclusions [org.slf4j/jcl-over-slf4j
+   [com.jcraft/jsch "0.1.53"]
+   [javax.mail/mail "1.5.0-b01"]
+   [hiccup "1.0.5"]
+   [com.datomic/datomic-free "0.9.5350" :exclusions [org.slf4j/jcl-over-slf4j
                                                      org.slf4j/jul-to-slf4j
                                                      org.slf4j/log4j-over-slf4j
                                                      org.slf4j/slf4j-log4j12]]]
@@ -38,7 +41,7 @@
    "test"
    :target-path]
 
-  :min-lein-version "2.5.3"
+  :min-lein-version "2.6.1"
 
   :profiles
   {:uberjar {:aot :all}

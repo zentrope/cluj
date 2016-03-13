@@ -1,6 +1,14 @@
 #+title: change log
 #+author: Keith Irwin
 
+* Version 0.4.1
+  - Added jsch.
+  - Added javamail
+  - Added hiccup
+  - Updated datomic to 0.9.5350
+  - Updated cider/nrepl "0.11.0"
+  - Updated http-kit "2.2.0-alpha1"
+
 * Version 0.4.0
   - Updated to Clojure 1.8
   - Added core.logic.
