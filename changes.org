@@ -2,7 +2,8 @@
 #+author: Keith Irwin
 
 * Version 0.4.1
-  - Added jsch.
+  - Added sshj.
+  - Added expectit.
   - Added javamail
   - Added hiccup
   - Updated datomic to 0.9.5350

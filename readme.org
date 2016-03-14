@@ -53,7 +53,9 @@ is the Clojure REPL.
 
  - [[https://github.com/stuartsierra/component][component]] :: Stuart Sierra's component library [4.0]
 
- - jsch :: A java lib for SSH related stuff. [4.1]
+ - [[https://github.com/hierynomus/sshj][sshj]] :: A java lib for SSH related stuff. [4.1]
+
+ - [[https://github.com/Alexey1Gavrilov/ExpectIt][ExpectIt]] :: Expect lib for remote connections, like sshj. [4.1]
 
  - javamail :: Java lib for sending email. [4.1]
 

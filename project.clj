@@ -23,13 +23,15 @@
    [org.codehaus.plexus/plexus-utils "3.0.22"]
    [cider/cider-nrepl "0.11.0"]
    [com.stuartsierra/component "0.3.1"]
-   [com.jcraft/jsch "0.1.53"]
+   [com.hierynomus/sshj "0.15.0"]
+   [net.sf.expectit/expectit-core "0.8.1"]
    [javax.mail/mail "1.5.0-b01"]
    [hiccup "1.0.5"]
    [com.datomic/datomic-free "0.9.5350" :exclusions [org.slf4j/jcl-over-slf4j
-                                                     org.slf4j/jul-to-slf4j
                                                      org.slf4j/log4j-over-slf4j
-                                                     org.slf4j/slf4j-log4j12]]]
+                                                     org.slf4j/jul-to-slf4j
+                                                     org.slf4j/slf4j-log4j12
+                                                     org.slf4j/slf4j-api]]]
 
   :main nil
 
