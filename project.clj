@@ -1,4 +1,5 @@
-(defproject zentrope.com/cluj "0.5"
+(defproject zentrope.com/cluj "0.5.0"
+
   :description
   "bundle clojure libs to use for shell scripting"
 
