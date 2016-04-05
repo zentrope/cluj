@@ -8,7 +8,7 @@ for shell-scripting, or whatever.
 
 * status
 
-[[https://github.com/zentrope/cluj/releases/tag/v0.4.0][Version 0.4.0]].
+[[https://github.com/zentrope/cluj/releases/tag/v0.5.0][Version 0.5.0]].
 
 You can get the release on the [[https://github.com/zentrope/cluj/releases][releases]] page.
 
@@ -60,6 +60,13 @@ is the Clojure REPL.
  - javamail :: Java lib for sending email. [4.1]
 
  - hiccup :: Lib for creating XML/HTML via clojure data structures. [4.1]
+
+ - tools.logging :: A lib abstracting over an assortment of JVM
+      logging libraries.
+
+ - logback :: One of those logging libraries.
+
+ - p/schema :: Prismatic/Plumatic schema.
 
 * maybe add?
 

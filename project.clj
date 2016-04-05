@@ -1,4 +1,4 @@
-(defproject zentrope.com/cluj "0.4.1"
+(defproject zentrope.com/cluj "0.5"
   :description
   "bundle clojure libs to use for shell scripting"
 
@@ -13,10 +13,12 @@
    [org.clojure/data.json "0.2.6"]
    [org.clojure/tools.cli "0.3.3"]
    [org.clojure/tools.nrepl "0.2.12"]
-
+   [org.clojure/tools.logging "0.3.1"]
    [org.clojure/core.logic "0.8.10"]
+
+   [ch.qos.logback/logback-classic "1.1.7"]
    [clj-time "0.11.0"]
-   [com.cemerick/pomegranate "0.3.0" :exclusions [org.codehaus.plexus/plexus-utils]]
+   [com.cemerick/pomegranate "0.3.1" :exclusions [org.codehaus.plexus/plexus-utils]]
    [http-kit "2.2.0-alpha1"]
    [me.raynes/fs "1.4.6"]
    [pandect "0.5.4"]
@@ -27,6 +29,8 @@
    [net.sf.expectit/expectit-core "0.8.1"]
    [javax.mail/mail "1.5.0-b01"]
    [hiccup "1.0.5"]
+   [prismatic/schema "1.1.0"]
+
    [com.datomic/datomic-free "0.9.5350" :exclusions [org.slf4j/jcl-over-slf4j
                                                      org.slf4j/log4j-over-slf4j
                                                      org.slf4j/jul-to-slf4j
@@ -51,4 +55,4 @@
          [[org.clojure/tools.nrepl "0.2.12"]]
 
          :plugins
-         [[lein-ancient "0.6.8"]]}})
+         [[lein-ancient "0.6.10"]]}})

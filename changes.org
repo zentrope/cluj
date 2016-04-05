@@ -1,6 +1,12 @@
 #+title: change log
 #+author: Keith Irwin
 
+* Version 0.5.0
+  - Added prismatic/plumatic schema.
+  - Added clojure.tools.logging.
+  - Added logback.
+  - Updated pomegranate version.
+
 * Version 0.4.1
   - Added sshj.
   - Added expectit.
