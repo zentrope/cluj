@@ -3,10 +3,12 @@
   :description
   "bundle clojure libs to use for shell scripting"
 
-  :url "https://githib.com/zentrope/cluj"
+  :url
+  "https://githib.com/zentrope/cluj"
 
-  :license {:name "Eclipse Public License"
-            :url  "http://www.eclipse.org/legal/epl-v10.html"}
+  :license
+  {:name "Eclipse Public License"
+   :url  "http://www.eclipse.org/legal/epl-v10.html"}
 
   :dependencies
   [[org.clojure/clojure              "1.9.0-alpha14"]
@@ -40,17 +42,24 @@
                                                              org.slf4j/log4j-over-slf4j
                                                              org.slf4j/jul-to-slf4j
                                                              org.slf4j/slf4j-log4j12
-                                                             org.slf4j/slf4j-api]]]
+                                                             org.slf4j/slf4j-api
+                                                             org.slf4j/slf4j-nop]]]
 
-  :main nil
+  :main ^:skip-aot
+  cluj.core
 
-  :aliases {"updates" ["ancient" ":all" ":check-clojure" ":plugins" ":allow-qualified"]}
+  :aliases
+  {"updates" ["ancient" ":all" ":check-clojure" ":plugins" ":allow-qualified"]}
 
-  :min-lein-version "2.7.1"
+  :min-lein-version
+  "2.7.1"
 
   :profiles
   {:uberjar {:aot :all}
-   :dev     {:dependencies
+   :dev     {:resource-paths ^:replace
+             ["resources"]
+
+             :dependencies
              [[org.clojure/tools.nrepl "0.2.12"]]
              :plugins
              [[lein-ancient "0.6.10"]]}})
