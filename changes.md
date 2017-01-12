@@ -6,6 +6,10 @@
 * Add `scripts/install` to install locally in `~/bin`.
 * Changing to incremental version number rather than semantic bs.
 * Removed plumatic schema in favor of Clojure 1.9 `clojure.spec`.
+* Removed component.
+* Added integrant and integrant/repl.
+* Added jdbc with mysql, postgres, h2 and sql-lite drivers.
+* Added `clojure/math.combinatorics`.
 
 ## version 0.5.0
 
