@@ -1,6 +1,10 @@
 #+title: change log
 #+author: Keith Irwin
 
+* Version 6
+  - Updated all libraries to most recent versions.
+  - Removed prismatic schema
+
 * Version 0.5.0
   - Added prismatic/plumatic schema.
   - Added clojure.tools.logging.

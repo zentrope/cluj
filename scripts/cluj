@@ -4,7 +4,7 @@ root=$(cd $(dirname $0) > /dev/null ; pwd)
 bash=`which bash`
 rlwrap=`which rlwrap`
 
-vers="0.5.0"
+vers="6"
 
 version="cluj-${vers}-standalone.jar"
 local="${root}/${version}"

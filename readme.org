@@ -8,7 +8,7 @@ for shell-scripting, or whatever.
 
 * status
 
-[[https://github.com/zentrope/cluj/releases/tag/v0.5.0][Version 0.5.0]].
+[[https://github.com/zentrope/cluj/releases/tag/v0.5.0][Version 6]].
 
 You can get the release on the [[https://github.com/zentrope/cluj/releases][releases]] page.
 
@@ -28,50 +28,36 @@ should contain some code to update itself, but that day isn't today.
 All of these are mashed together into an uberjar, the "main" of which
 is the Clojure REPL.
 
- - [[http://clojure.org][clojure]] :: The language
- - [[https://github.com/clojure/core.async][core.async]] :: Async-style concurrency
- - [[https://github.com/clj-time/clj-time][clj.time]] :: A date and time library for Clojure, wrapping the Joda Time library.
- - [[https://github.com/clojure/data.json][data.json]] :: JSON parser/generator to/from Clojure data structures.
- - [[http://datomic.com][datomic-free]] :: The fully transactional, cloud-ready, distributed database.
- - [[http://www.http-kit.org][http-kit]] :: (has both server and client)
- - [[https://github.com/Raynes/fs/][fs]] :: This library defines some utilities for working with the file
-         system in Clojure. Mostly, it wants to fill the gap that
-         =clojure.java.io= leaves and add on (and prettify) what
-         =java.io.File= provides.
- - [[https://github.com/xsc/pandect][pandect]] :: Pandect is a fast and easy-to-use Message Digest,
-              Checksum, HMAC and Signature library for Clojure.
- - [[https://github.com/cemerick/pomegranate][pomegranate]] :: Support for resolving Java/Clojure dependencies same
-                  as Leiningen.
- - [[https://github.com/clojure/tools.cli][tools.cli]] :: Command line options.
- - [[https://github.com/clojure/tools.nrepl][tools.nrepl]] :: A Clojure network REPL that provides a server and
-                  client, along with some common APIs of use to IDEs
-                  and other tools that may need to evaluate Clojure
-                  code in remote environments.
- - [[https://github.com/clojure-emacs/cider-nrepl][cider-nrepl]] :: nREPL middleware for CIDER
 
- - [[https://github.com/clojure/core.logic][core.logic]] :: Facilities for logic programming.
-
- - [[https://github.com/stuartsierra/component][component]] :: Stuart Sierra's component library [4.0]
-
- - [[https://github.com/hierynomus/sshj][sshj]] :: A java lib for SSH related stuff. [4.1]
-
- - [[https://github.com/Alexey1Gavrilov/ExpectIt][ExpectIt]] :: Expect lib for remote connections, like sshj. [4.1]
-
- - javamail :: Java lib for sending email. [4.1]
-
- - hiccup :: Lib for creating XML/HTML via clojure data structures. [4.1]
-
- - tools.logging :: A lib abstracting over an assortment of JVM
-      logging libraries.
-
- - logback :: One of those logging libraries.
-
- - p/schema :: Prismatic/Plumatic schema.
+#+begin_src clojure
+[[org.clojure/clojure            "1.9.0-alpha14"]
+ [org.clojure/core.async         "0.2.395"]
+ [org.clojure/data.json          "0.2.6"]
+ [org.clojure/tools.cli          "0.3.5"]
+ [org.clojure/tools.nrepl        "0.2.12"]
+ [org.clojure/tools.logging      "0.3.1"]
+ [org.clojure/core.logic         "0.8.11"]
+ [ch.qos.logback/logback-classic "1.1.8"]
+ [clj-time                       "0.13.0"]
+ [com.cemerick/pomegranate       "0.3.1" :exclusions [org.codehaus.plexus/plexus-utils]]
+ [http-kit                       "2.3.0-alpha1"]
+ [me.raynes/fs                   "1.4.6"]
+ [pandect                        "0.6.1"]
+ [cider/cider-nrepl              "0.14.0"]
+ [com.stuartsierra/component     "0.3.2"]
+ [com.hierynomus/sshj            "0.19.1"]
+ [net.sf.expectit/expectit-core  "0.8.2"]
+ [javax.mail/mail                "1.5.0-b01"]
+ [hiccup                         "1.0.5"]
+ [com.datomic/datomic-free       "0.9.5544" :exclusions [org.slf4j/jcl-over-slf4j
+                                                         org.slf4j/log4j-over-slf4j
+                                                         org.slf4j/jul-to-slf4j
+                                                         org.slf4j/slf4j-log4j12
+                                                         org.slf4j/slf4j-api]]]
+#+end_src
 
 * maybe add?
 
- - +core.logic?+
- - +datomic free (to use for experiments or quick hacks)+?
  - jdbc api?
  - postgres, mysql, [[http://h2database.com/html/cheatSheet.html][h2]] and [[https://github.com/xerial/sqlite-jdbc][sql-lite]] drivers?
 
