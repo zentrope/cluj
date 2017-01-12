@@ -56,10 +56,10 @@ is the Clojure REPL.
  [mysql/mysql-connector-java       "6.0.5"]
  [org.xerial/sqlite-jdbc           "3.16.1"]
  [com.datomic/datomic-free         "0.9.5544" :exclusions [org.slf4j/jcl-over-slf4j
-                                                             org.slf4j/log4j-over-slf4j
-                                                             org.slf4j/jul-to-slf4j
-                                                             org.slf4j/slf4j-log4j12
-                                                             org.slf4j/slf4j-api]]]
+                                                           org.slf4j/log4j-over-slf4j
+                                                           org.slf4j/jul-to-slf4j
+                                                           org.slf4j/slf4j-log4j12
+                                                           org.slf4j/slf4j-api]]]
 ```
 
 ## example script
