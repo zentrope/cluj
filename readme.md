@@ -28,31 +28,31 @@ is the Clojure REPL.
 
 
 ```clojure
-  [[org.clojure/clojure              "1.9.0-alpha14"]
-   [org.clojure/core.async           "0.2.395"]
-   [org.clojure/data.json            "0.2.6"]
-   [org.clojure/tools.cli            "0.3.5"]
-   [org.clojure/tools.nrepl          "0.2.12"]
-   [org.clojure/tools.logging        "0.3.1"]
-   [org.clojure/core.logic           "0.8.11"]
-   [ch.qos.logback/logback-classic   "1.1.8"]
-   [clj-time                         "0.13.0"]
-   [com.cemerick/pomegranate         "0.3.1" :exclusions [org.codehaus.plexus/plexus-utils]]
-   [org.codehaus.plexus/plexus-utils "3.0.24"]
-   [http-kit                         "2.3.0-alpha1"]
-   [me.raynes/fs                     "1.4.6"]
-   [pandect                          "0.6.1"]
-   [cider/cider-nrepl                "0.14.0"]
-   [com.stuartsierra/component       "0.3.2"]
-   [com.hierynomus/sshj              "0.19.1"]
-   [net.sf.expectit/expectit-core    "0.8.2"]
-   [javax.mail/mail                  "1.5.0-b01"]
-   [hiccup                           "1.0.5"]
-   [com.datomic/datomic-free         "0.9.5544" :exclusions [org.slf4j/jcl-over-slf4j
-                                                             org.slf4j/log4j-over-slf4j
-                                                             org.slf4j/jul-to-slf4j
-                                                             org.slf4j/slf4j-log4j12
-                                                             org.slf4j/slf4j-api]]]
+[[org.clojure/clojure              "1.9.0-alpha14"]
+ [org.clojure/core.async           "0.2.395"]
+ [org.clojure/data.json            "0.2.6"]
+ [org.clojure/tools.cli            "0.3.5"]
+ [org.clojure/tools.nrepl          "0.2.12"]
+ [org.clojure/tools.logging        "0.3.1"]
+ [org.clojure/core.logic           "0.8.11"]
+ [ch.qos.logback/logback-classic   "1.1.8"]
+ [clj-time                         "0.13.0"]
+ [com.cemerick/pomegranate         "0.3.1" :exclusions [org.codehaus.plexus/plexus-utils]]
+ [org.codehaus.plexus/plexus-utils "3.0.24"]
+ [http-kit                         "2.3.0-alpha1"]
+ [me.raynes/fs                     "1.4.6"]
+ [pandect                          "0.6.1"]
+ [cider/cider-nrepl                "0.14.0"]
+ [com.stuartsierra/component       "0.3.2"]
+ [com.hierynomus/sshj              "0.19.1"]
+ [net.sf.expectit/expectit-core    "0.8.2"]
+ [javax.mail/mail                  "1.5.0-b01"]
+ [hiccup                           "1.0.5"]
+ [com.datomic/datomic-free         "0.9.5544" :exclusions [org.slf4j/jcl-over-slf4j
+                                                           org.slf4j/log4j-over-slf4j
+                                                           org.slf4j/jul-to-slf4j
+                                                           org.slf4j/slf4j-log4j12
+                                                           org.slf4j/slf4j-api]]]
 ```
 
 ## maybe add?
@@ -68,40 +68,40 @@ resolving dependencies. =Cluj= includes =pomegranate=, so you can role
 your own resolver:
 
 ```clojure
-  #!/usr/bin/env cluj
+#!/usr/bin/env cluj
 
-  (require '[clojure.string :as s])
-  (require '[cemerick.pomegranate.aether :as a])
+(require '[clojure.string :as s])
+(require '[cemerick.pomegranate.aether :as a])
 
-  (def deps
-    '[[org.clojure/clojure "1.8.0"]
-      [me.raynes/fs "1.4.6"]
-      [http-kit "2.1.19"]])
+(def deps
+  '[[org.clojure/clojure "1.8.0"]
+    [me.raynes/fs "1.4.6"]
+    [http-kit "2.1.19"]])
 
-  (def repos
-    {"central" {:url "http://repo1.maven.org/maven2/"}
-     "sonatype" {:url "http://oss.sonatype.org/content/repositories/releases"}
-     "java.net" {:url "http://download.java.net/maven/2"}
-     "clojars" {:url "http://clojars.org/repo"}})
+(def repos
+  {"central" {:url "http://repo1.maven.org/maven2/"}
+   "sonatype" {:url "http://oss.sonatype.org/content/repositories/releases"}
+   "java.net" {:url "http://download.java.net/maven/2"}
+   "clojars" {:url "http://clojars.org/repo"}})
 
-  (defn jar-list
-    [deps repos]
-    (-> (a/resolve-dependencies :coordinates deps :repositories repos)
-        (a/dependency-files)))
+(defn jar-list
+  [deps repos]
+  (-> (a/resolve-dependencies :coordinates deps :repositories repos)
+      (a/dependency-files)))
 
-  (defn class-path
-    [deps repos]
-    (->> (jar-list deps repos)
-         (map #(.getAbsolutePath %))
-         (s/join (System/getProperty "path.separator"))))
+(defn class-path
+  [deps repos]
+  (->> (jar-list deps repos)
+       (map #(.getAbsolutePath %))
+       (s/join (System/getProperty "path.separator"))))
 
-  ;; Print path to each jar
-  (doseq [jar (sort (jar-list deps repos))]
-    (println "jar =>" (.getAbsolutePath jar)))
+;; Print path to each jar
+(doseq [jar (sort (jar-list deps repos))]
+  (println "jar =>" (.getAbsolutePath jar)))
 
-  ;; Dump the classpath
-  (println "classpath:")
-  (println (class-path deps repos))
+;; Dump the classpath
+(println "classpath:")
+(println (class-path deps repos))
 ```
 
 If the `cluj` script is on your `$PATH`, for instance, in `~/bin`, you
