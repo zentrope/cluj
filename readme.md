@@ -128,14 +128,17 @@ In this way, you could implement a build system in `bash`.
 
 ### version 6 (snapshot)
 
-* Updated all libraries to most recent versions.
-* Add `scripts/install` to install locally in `~/bin`.
-* Changing to incremental version number rather than semantic bs.
-* Removed plumatic schema in favor of Clojure 1.9 `clojure.spec`.
-* Removed component.
-* Added integrant and integrant/repl.
-* Added jdbc with mysql, postgres, h2 and sql-lite drivers.
-* Added `clojure/math.combinatorics`.
+* [ ] Don't start up `cider/repl` when not invoking interactive repl
+* [ ] Add a simple emacs binding cider repl thing.
+* [x] Add default `cider/repl` on `64001` when cluj repl invoked.
+* [x] Updated all libraries to most recent versions.
+* [x] Add `scripts/install` to install locally in `~/bin`.
+* [x] Changing to incremental version number rather than semantic bs.
+* [x] Removed plumatic schema in favor of Clojure 1.9 `clojure.spec`.
+* [x] Removed component.
+* [x] Added integrant and integrant/repl.
+* [x] Added jdbc with mysql, postgres, h2 and sql-lite drivers.
+* [x] Added `clojure/math.combinatorics`.
 
 ### version 0.5.0
 
