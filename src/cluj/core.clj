@@ -42,7 +42,11 @@
 
 (defn -main
   [& args]
-  (println (format "Socket-based cider/repl available on port %s." port))
-  (doto (Thread. system)
-    (.start))
-  (apply clojure.main/main args))
+  (try
+    (when (empty? args)
+      (println (format "Socket-based cider/repl available on port %s." port))
+      (doto (Thread. system)
+        (.start)))
+    (apply clojure.main/main args)
+    (finally
+      (System/exit 0))))

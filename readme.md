@@ -128,8 +128,9 @@ In this way, you could implement a build system in `bash`.
 
 ### version 6 (snapshot)
 
-* [ ] Don't start up `cider/repl` when not invoking interactive repl
-* [ ] Add a simple emacs binding cider repl thing.
+* [ ] Use stub technique to avoid AOT.
+* [ ] Add a simple emacs binding cider repl example thing.
+* [x] Don't start up `cider/repl` when not invoking interactive repl
 * [x] Add default `cider/repl` on `64001` when cluj repl invoked.
 * [x] Updated all libraries to most recent versions.
 * [x] Add `scripts/install` to install locally in `~/bin`.
