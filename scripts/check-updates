@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+root=$(dirname "$0")
+root=$(cd ${root}/.. ; echo $PWD)
+
+{
+  cd ${root}
+  lein updates
+}
