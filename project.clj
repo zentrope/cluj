@@ -46,7 +46,7 @@
                                                              org.slf4j/slf4j-nop]]]
 
   :main ^:skip-aot
-  cluj.core
+  cluj.stub
 
   :aliases
   {"updates" ["ancient" ":all" ":check-clojure" ":plugins" ":allow-qualified"]}
