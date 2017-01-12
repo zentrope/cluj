@@ -3,8 +3,9 @@
 ## version 6 (snapshot)
 
 * Updated all libraries to most recent versions.
+* Add `scripts/install` to install locally in `~/bin`.
 * Changing to incremental version number rather than semantic bs.
-* Removed prismatic schema in favor of Clojure 1.9 `clojure.spec`.
+* Removed plumatic schema in favor of Clojure 1.9 `clojure.spec`.
 
 ## version 0.5.0
 

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+root=$(dirname $0)
+root=$(cd ${root}/.. ; echo ${PWD})
+
+target="${HOME}/bin"
+
+{
+  echo "Building..."
+  lein uberjar
+  jar=$(ls ${root}/target/cluj*alone.jar)
+  to=$(basename ${jar})
+  cp -v ${jar} ${target}/${to}
+  cp -v ${root}/scripts/cluj ${target}/cluj
+}
