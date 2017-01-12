@@ -1,35 +1,33 @@
-#+title: cluj
-#+author: Keith Irwin
-#+startup: showall
+# Cluj
 
 Clojure bundled with a lot of handy "shell scripting" libs. Put the
-uberjar on your classpath and you can have lots of handy functionality
-for shell-scripting, or whatever.
+uberjar and script on your path and you can have lots of handy
+functionality for shell-scripting, or whatever.
 
-* status
+## status
 
-[[https://github.com/zentrope/cluj/releases/tag/v0.5.0][Version 6]].
+[Version 6](https://github.com/zentrope/cluj/releases/tag/v6)
 
-You can get the release on the [[https://github.com/zentrope/cluj/releases][releases]] page.
+You can get the release on the [releases](https://github.com/zentrope/cluj/releases)  page.
 
-- Download the jar
+* Download the jar
 
-- Download the script
+* Download the script
 
-- Put both the jar and the script on your =$PATH= and =chmod u+x
-  cluj= the script. It expects the jar in the same directory as the
-  script itself, or in =~/.cluj=.
+* Put both the jar and the script on your `$PATH` and `chmod u+x
+  cluj` the script. It expects the jar in the same directory as the
+  script itself, or in `~/.cluj`.
 
-Someday, the =cluj= script should self-install, and the jar itself
+Someday, the `cluj` script should self-install, and the jar itself
 should contain some code to update itself, but that day isn't today.
 
-* bundled libs
+## bundled libs
 
 All of these are mashed together into an uberjar, the "main" of which
 is the Clojure REPL.
 
 
-#+begin_src clojure
+```clojure
   [[org.clojure/clojure              "1.9.0-alpha14"]
    [org.clojure/core.async           "0.2.395"]
    [org.clojure/data.json            "0.2.6"]
@@ -55,21 +53,21 @@ is the Clojure REPL.
                                                              org.slf4j/jul-to-slf4j
                                                              org.slf4j/slf4j-log4j12
                                                              org.slf4j/slf4j-api]]]
-#+end_src
+```
 
-* maybe add?
+## maybe add?
 
- - jdbc api?
- - postgres, mysql, [[http://h2database.com/html/cheatSheet.html][h2]] and [[https://github.com/xerial/sqlite-jdbc][sql-lite]] drivers?
+* jdbc api?
+* postgres, mysql, [h2](http://h2database.com/html/cheatSheet.html) and [sql-lite](https://github.com/xerial/sqlite-jdbc) drivers?
 
-* example script
+## example script
 
 Imagine you want to use a shell script to build your Clojure app
 rather than a full blown system. The hardest part of that system is
 resolving dependencies. =Cluj= includes =pomegranate=, so you can role
 your own resolver:
 
-#+begin_src clojure
+```clojure
   #!/usr/bin/env cluj
 
   (require '[clojure.string :as s])
@@ -104,26 +102,22 @@ your own resolver:
   ;; Dump the classpath
   (println "classpath:")
   (println (class-path deps repos))
-#+end_src
+```
 
-If the =cluj= script is on your =$PATH=, for instance, in =~/bin=, you
+If the `cluj` script is on your `$PATH`, for instance, in `~/bin`, you
 can run this script as:
 
-#+begin_src sh
-  cluj deps.clj
-#+end_src
+    cluj deps.clj
 
-Given that the first line is =!/usr/bin/env cluj= you can set the
+Given that the first line is `!/usr/bin/env cluj` you can set the
 execute permission on the script and run it directly:
 
-#+begin_src sh
-  chmod u+x deps.clj
-  ./deps.clj
-#+end_src
+    chmod u+x deps.clj
+    ./deps.clj
 
-again, as long as =cluj= is on your =$PATH=. With a few changes
+again, as long as `cluj` is on your `$PATH`. With a few changes
 (removing the "jar =>" print stuff), you could do something like:
 
-#+begin_src sh
-  export CLASSPATH=`deps.clj`
-#+end_src
+    export CLASSPATH=`deps.clj`
+
+In this way, you could implement a build system in `bash`.
