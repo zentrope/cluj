@@ -23,7 +23,7 @@ fi
 
 if [[ "" = "$@" ]] ; then
   echo "Cluj ${vers}"
-  ${rlwrap} java -cp ${clujar} clojure.main "$@"
+  ${rlwrap} java -jar ${clujar} "$@"
 else
-  java -cp ${clujar} clojure.main "$@"
+  java -jar ${clujar} "$@"
 fi
