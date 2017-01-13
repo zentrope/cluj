@@ -4,11 +4,16 @@ Clojure bundled with a lot of handy "shell scripting" libs. Put the
 uberjar and script on your path and you can have lots of handy
 functionality for shell-scripting, or whatever.
 
-## status
+## Status
 
-[Version 6](https://github.com/zentrope/cluj/releases/tag/v6)
+Current: [Version 0.5.0](https://github.com/zentrope/cluj/releases/tag/v0.5.0)
 
-You can get the release on the [releases](https://github.com/zentrope/cluj/releases)  page.
+In-progress: [Version 6](https://github.com/zentrope/cluj/releases/tag/v6)
+
+## Release installation
+
+You can get the release on
+the [releases](https://github.com/zentrope/cluj/releases) page.
 
 * Download the jar
 
@@ -21,7 +26,20 @@ You can get the release on the [releases](https://github.com/zentrope/cluj/relea
 Someday, the `cluj` script should self-install, and the jar itself
 should contain some code to update itself, but that day isn't today.
 
-## bundled libs
+## Source installation
+
+Clone this repo:
+
+    $ git clone git@github.com:zentrope/cluj
+
+then run the install script:
+
+    $ ./script/install
+
+This will put an uberjar and a `cluj` shell script in `~/bin`. If you
+don't use `~/bin` um, uh, you can change the install script.
+
+## Bundled Libs
 
 All of these are mashed together into an uberjar, the "main" of which
 is the Clojure REPL.
@@ -58,7 +76,7 @@ is the Clojure REPL.
  [pandect                          "0.6.1"]]
 ```
 
-## example script
+## Example Script
 
 Imagine you want to use a shell script to build your Clojure app
 rather than a full blown system. The hardest part of that system is
@@ -120,11 +138,57 @@ again, as long as `cluj` is on your `$PATH`. With a few changes
 
 In this way, you could implement a build system in `bash`.
 
+
+## Emacs Integration with Repl
+
+When you start `cluj` with no parameters, you get a REPL in the
+terminal, but you also get a cider/nrepl server running on port
+`64001`. The idea is that you can have a Clojure REPL accessible in,
+say, Emacs, that isn't connected to any specific project so you can
+try things out, or so you can develop `cluj` scripts outside a project
+context.
+
+Here's my personal Emacs integration:
+
+```emacs-lisp
+(require 'cider)
+
+(defun kfi/cluj-find-existing-repl (endpoint)
+  (seq-find (lambda (buff)
+              (with-current-buffer buff
+                (when (equal endpoint nrepl-endpoint)
+                  buff)))
+            (cider-repl-buffers)))
+
+(defun kfi/cluj-connect ()
+  (interactive)
+  (let* ((host     "localhost")
+         (port     64001)
+         (endpoint `(,host ,port))
+         (repl     (kfi/cluj-find-existing-repl endpoint)))
+    (if repl
+        (switch-to-buffer repl)
+      (progn
+        (cider-connect host port "~cluj")
+        (when-let ((buff (kfi/cluj-find-existing-repl endpoint)))
+          (switch-to-buffer buff)
+          (rename-buffer "cluj.repl" t))))))
+
+(global-set-key (kbd "C-c C-k C-j") 'kfi/cluj-connect)
+
+(provide 'kfi-cluj)
+```
+
+Invoking `M-x kfi/cluj-connect` (or using `C-c C-k C-j`) will create a
+repl to `cluj` if one doesn't exist, or switch to it if it does.
+
+
 ## Change Log
 
 ### version 6 (snapshot)
 
-* [ ] Add a simple emacs binding cider repl example thing.
+* [ ] A script and list of tasks for creating a release.
+* [x] Add a simple Emacs binding cider repl example thing.
 * [x] Use stub technique to avoid AOT.
 * [x] Don't start up `cider/repl` when not invoking interactive repl
 * [x] Add default `cider/repl` on `64001` when cluj repl invoked.
