@@ -187,6 +187,7 @@ repl to `cluj` if one doesn't exist, or switch to it if it does.
 
 ### version 6 (snapshot)
 
+* [ ] Don't hard code port so we can have more than one repl?
 * [ ] A script and list of tasks for creating a release.
 * [x] Add a simple Emacs binding cider repl example thing.
 * [x] Use stub technique to avoid AOT.
